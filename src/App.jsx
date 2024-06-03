@@ -111,7 +111,7 @@ function App() {
   function toggleSizingPanel() {
     document.getElementById("sizingPanel").classList.toggle("hidden");
     document.getElementById("toggle-sizePanel").classList.toggle("sectionOpen");
-    document.getElementById("toggle-textures").classList.remove("sectionOpen");
+    document.getElementById("toggle-textures").classList.toggle("sectionOpen");
     document.getElementById("toggle-positionPanel").classList.remove("sectionOpen");
     if (!document.getElementById("textures").classList.contains("hidden")) {
       document.getElementById("textures").classList.add("hidden");
@@ -176,10 +176,10 @@ function App() {
               </label>
               <span>View in 3D</span>
             </div>
-            <button onClick={toggleSizingPanel} id="toggle-sizePanel" className="toggle-btn sectionOpen">
+            <button onClick={toggleSizingPanel} id="toggle-sizePanel" className="toggle-btn">
               Define wall sizes
             </button>
-            <div id="sizingPanel" className="">
+            <div id="sizingPanel" className="hidden">
               <div className="range-container">
                 <label htmlFor="height">Height (ft) (between 0 and 10):</label>
                 <input
