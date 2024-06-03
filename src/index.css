@@ -1,0 +1,289 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+
+.control-panel {
+  position: absolute;
+  z-index: 1;
+  height: 90vh;
+  margin-top: 5vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 16px 16px 0;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .toggles{
+    padding: 0 10px;
+    overflow-y: scroll;
+}
+
+.image-gallery {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+img.cp-texture {
+  width: 30%;
+  margin: 0 !important;
+  height: 65px;
+}
+
+img.logo {
+  /* width: 70%; */
+  border-radius: 0 16px 0 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.toggle-btn {
+  width: 100%;
+  text-align: left;
+  height: 50px;
+  font-size: 16px;
+  border: 1px solid #0000000f;
+  margin: 5px 0;
+}
+
+.toggle-btn:hover {
+  cursor: pointer;
+}
+
+.calculations {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+div#sizingPanel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sectionOpen {
+  background-color: goldenrod;
+  color: white;
+  font-weight: bold;
+}
+
+p.offerText {
+  background: goldenrod;
+  font-size: 14px;
+  margin: 0;
+}
+
+.price {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background: black;
+  border-radius: 0 0 16px 0;
+}
+
+.addToCart {
+  background: forestgreen;
+  color: wheat;
+  width: 40%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 0 0 16px 0;
+}
+
+.addToCart:hover {
+  cursor: pointer;
+  background: green;
+}
+
+.totalPrice {
+  height: 100%;
+  background: black;
+  color: white;
+  align-content: center;
+  text-align: center;
+  width: 35%;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.delivery {
+  background: black;
+  height: 100%;
+  color: white;
+  font-size: 10px;
+  width: 25%;
+  align-content: center;
+  line-height: 1.5;
+}
+
+span.deliveryText {
+  color: #228B22;
+}
+
+span.vat {
+  color: gray;
+}
+
+.range-container {
+  position: relative;
+}
+
+.range-container input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.range-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 20px;
+  background: goldenrod;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.range-container .value {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.control-panel {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+.control-panel.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root, .app {
+  height: 100%;
+}
+
+.room {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* Toggle switch style */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.toggle-container {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
